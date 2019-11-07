@@ -14,9 +14,13 @@
 		6FF2CA36236A6A3800109424 /* visionkit_example.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6FF2CA34236A6A3800109424 /* visionkit_example.xcdatamodeld */; };
 		6FF2CA38236A6A3800109424 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FF2CA37236A6A3800109424 /* Assets.xcassets */; };
 		6FF2CA3B236A6A3800109424 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FF2CA39236A6A3800109424 /* LaunchScreen.storyboard */; };
+		6FF71CFA2373F33500B60B17 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF71CF92373F33500B60B17 /* DetailViewController.swift */; };
+		BD10BC7125A042358D4DD0D7 /* Pods_visionkit_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA2F01C69E430ED4AB12E93 /* Pods_visionkit_example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		419A8E5D567FBBD1BDA354AB /* Pods-visionkit-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visionkit-example.release.xcconfig"; path = "Target Support Files/Pods-visionkit-example/Pods-visionkit-example.release.xcconfig"; sourceTree = "<group>"; };
+		5D88755F318A62A1F908F748 /* Pods-visionkit-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visionkit-example.debug.xcconfig"; path = "Target Support Files/Pods-visionkit-example/Pods-visionkit-example.debug.xcconfig"; sourceTree = "<group>"; };
 		6FF2CA28236A6A3800109424 /* visionkit-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "visionkit-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FF2CA2B236A6A3800109424 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FF2CA2D236A6A3800109424 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +30,8 @@
 		6FF2CA37236A6A3800109424 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6FF2CA3A236A6A3800109424 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6FF2CA3C236A6A3800109424 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FF71CF92373F33500B60B17 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		ABA2F01C69E430ED4AB12E93 /* Pods_visionkit_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_visionkit_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD10BC7125A042358D4DD0D7 /* Pods_visionkit_example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +51,8 @@
 			children = (
 				6FF2CA2A236A6A3800109424 /* visionkit-example */,
 				6FF2CA29236A6A3800109424 /* Products */,
+				ED94293EC65A40709751A1A9 /* Pods */,
+				8DFA588C1C4A2AD8E5F0D159 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,8 +75,26 @@
 				6FF2CA39236A6A3800109424 /* LaunchScreen.storyboard */,
 				6FF2CA3C236A6A3800109424 /* Info.plist */,
 				6FF2CA34236A6A3800109424 /* visionkit_example.xcdatamodeld */,
+				6FF71CF92373F33500B60B17 /* DetailViewController.swift */,
 			);
 			path = "visionkit-example";
+			sourceTree = "<group>";
+		};
+		8DFA588C1C4A2AD8E5F0D159 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABA2F01C69E430ED4AB12E93 /* Pods_visionkit_example.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED94293EC65A40709751A1A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D88755F318A62A1F908F748 /* Pods-visionkit-example.debug.xcconfig */,
+				419A8E5D567FBBD1BDA354AB /* Pods-visionkit-example.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6FF2CA3F236A6A3800109424 /* Build configuration list for PBXNativeTarget "visionkit-example" */;
 			buildPhases = (
+				AA231D13E9F92EA9DF5E4EA9 /* [CP] Check Pods Manifest.lock */,
 				6FF2CA24236A6A3800109424 /* Sources */,
 				6FF2CA25236A6A3800109424 /* Frameworks */,
 				6FF2CA26236A6A3800109424 /* Resources */,
+				B89922E09E45C65DBDF26478 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,6 +165,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AA231D13E9F92EA9DF5E4EA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-visionkit-example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B89922E09E45C65DBDF26478 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-visionkit-example/Pods-visionkit-example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftOCR/SwiftOCR.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GPUImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftOCR.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-visionkit-example/Pods-visionkit-example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6FF2CA24236A6A3800109424 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -143,6 +223,7 @@
 			files = (
 				6FF2CA30236A6A3800109424 /* ViewController.swift in Sources */,
 				6FF2CA36236A6A3800109424 /* visionkit_example.xcdatamodeld in Sources */,
+				6FF71CFA2373F33500B60B17 /* DetailViewController.swift in Sources */,
 				6FF2CA2C236A6A3800109424 /* AppDelegate.swift in Sources */,
 				6FF2CA2E236A6A3800109424 /* SceneDelegate.swift in Sources */,
 			);
@@ -286,6 +367,7 @@
 		};
 		6FF2CA40236A6A3800109424 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D88755F318A62A1F908F748 /* Pods-visionkit-example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +386,7 @@
 		};
 		6FF2CA41236A6A3800109424 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 419A8E5D567FBBD1BDA354AB /* Pods-visionkit-example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
