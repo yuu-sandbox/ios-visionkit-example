@@ -8,13 +8,12 @@
 
 import UIKit
 import VisionKit
-import SwiftOCR
+import Vision
 import PKHUD
 
 class ViewController: UIViewController {
 
     let docCamera = VNDocumentCameraViewController()
-    let ocr = SwiftOCR()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,18 +25,42 @@ class ViewController: UIViewController {
     }
 }
 
+// OCR: https://developer.apple.com/videos/play/wwdc2019/234/
 extension ViewController: VNDocumentCameraViewControllerDelegate {
     func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
         debugPrint("titile=\(scan.title), pageCount=\(scan.pageCount)")
+
         let vc = self.storyboard!.instantiateViewController(identifier: "DetailViewController") as! DetailViewController
+
         HUD.show(.progress)
-        self.ocr.recognize(scan.imageOfPage(at: 0)) { (msg) in
-            print("recognize:", msg)
-            DispatchQueue.main.async {
+        DispatchQueue.global().async {
+            let cgimg = scan.imageOfPage(at: 0).cgImage
+            guard let img = cgimg else {
                 HUD.hide()
-                vc.msg = msg
-                controller.present(vc, animated: true, completion: nil)
+                print("failed convert to cgImage")
+                return
             }
+
+            let rh = VNImageRequestHandler(cgImage: img, options: [:])
+            let req = VNRecognizeTextRequest { (request, error) in
+                guard let observations = request.results as? [VNRecognizedTextObservation] else {
+                    print("observations error")
+                    return
+                }
+                for obs in observations {
+                    let topCandidates = obs.topCandidates(1)
+                    if let text = topCandidates.first {
+                        print(text.string)
+                        vc.msg.append(text.string)
+                    }
+                }
+                DispatchQueue.main.async {
+                    HUD.hide()
+                    controller.present(vc, animated: true, completion: nil)
+                }
+            }
+            req.recognitionLevel = .accurate
+            try? rh.perform([req])
         }
     }
 }
