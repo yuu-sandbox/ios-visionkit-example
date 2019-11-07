@@ -11,15 +11,10 @@ import UIKit
 class DetailViewController: UIViewController {
     @IBOutlet var textView: UITextView!
 
-    var msg: String? = nil
+    var msg: String = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let msg = msg {
-            textView.text = msg
-        } else {
-            textView.text = "not recognize"
-        }
+        textView.text = msg
     }
 }
